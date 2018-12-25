@@ -1,24 +1,12 @@
 <#
 .SYNOPSIS
-    Short description
+    Deploys a zipped module to a given location
 .DESCRIPTION
-    Long description
+    Deploys a zipped module to a given location
 .EXAMPLE
-    Example of how to use this cmdlet
-.EXAMPLE
-    Another example of how to use this cmdlet
-.INPUTS
-    Inputs to this cmdlet (if any)
-.OUTPUTS
-    Output from this cmdlet (if any)
-.NOTES
-    General notes
-.COMPONENT
-    The component this cmdlet belongs to
-.ROLE
-    The role this cmdlet belongs to
-.FUNCTIONALITY
-    The functionality that best describes this cmdlet
+    DeplpoyModule -DeploymentType User -Path module_1.0.0.0.zip
+
+    Unzip module_1.0.0.0.zip to the users module folder
 #>
 function DeployModule {
     [CmdletBinding(DefaultParameterSetName = 'Default Location',
@@ -45,7 +33,7 @@ function DeployModule {
             ParameterSetName = 'Custom Location')]
         [System.IO.FileInfo] $DestinationPath,
 
-        # Forcing installation
+        # Forcing installation (not implemented)
         [Parameter()]
         [Switch]$Force
     )
